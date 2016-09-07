@@ -1,0 +1,53 @@
+% OML encoded font for mathrm
+% ****************************************************************
+% 
+% :Copyright: © 2008, 2010 Günter Milde
+% :Licence:   This work may be distributed and/or modified under the
+%             conditions of the `LaTeX Project Public License`_, either
+%             version 1.3 of this license or (at your option) any later version.
+% 
+% :Identification:
+%  ::
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{omlmathbf}
+[2011/02/16 v0.1 OML encoded mathbf alphabet]
+
+% Using OML encoded fonts for math alphabets is one way to get
+% small Greek letters in different math alphabets (cf. isomath_).
+
+% Requirements
+% ------------
+%
+% Define \alpha .. \Omega as symbols of category ``\mathalpha``::
+
+\RequirePackage{fixmath}
+
+% Options are defined with the key=value interface provided by
+% kvoptions_::
+
+\RequirePackage{kvoptions}
+
+% fontfamily
+% ----------
+% 
+% Font name, default ``mdput`` (mathdesign utopia)::
+
+\DeclareStringOption[mdput]{fontfamily}
+
+\ProcessKeyvalOptions*
+
+% Implementation  
+% --------------
+
+% As suggested in `The Comprehensive LaTeX Symbol List`_:: 
+
+\SetMathAlphabet{\mathbf}{normal}{OML}{\omlmathbf@fontfamily}{b}{n}
+
+
+% References
+% ~~~~~~~~~~
+% 
+% .. _LaTeX Project Public License: http://www.latex-project.org/lppl.txt
+% .. _kvoptions: http://mirror.ctan.org/help/Catalogue/entries/kvoptions.html
+% .. _isomath: http://mirror.ctan.org/help/Catalogue/entries/isomath.html
